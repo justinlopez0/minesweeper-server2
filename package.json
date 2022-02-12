@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "console": "^0.7.2",
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "@types/ws": "^8.2.2"
+  }
+}
