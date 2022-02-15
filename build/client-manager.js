@@ -4,7 +4,6 @@ exports.ClientManager = void 0;
 class ClientManager {
     constructor() {
         this.clients = [];
-        this.heartbeatInterval = 1000;
     }
     add(client) {
         this.clients.push(client);

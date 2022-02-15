@@ -1,10 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Client = void 0;
+const event_handler_1 = require("./event-handler");
 class Client {
     constructor(ws) {
+        this.eventHandler = event_handler_1.EventHandler.getInstance();
         this.ws = ws;
         this.id = this.generateId();
+        this.setupEventHandler();
+    }
+    setupEventHandler() {
+        this.ws.on('message', data => {
+            const parsedData = JSON.parse(data.toString());
+            this.eventHandler.handle(parsedData);
+        });
     }
     setWebSocket(ws) {
         this.ws = ws;

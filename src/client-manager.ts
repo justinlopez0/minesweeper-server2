@@ -1,7 +1,6 @@
 
 export class ClientManager {
     private clients: Array<any> = [];
-    protected heartbeatInterval: number = 1000;
 
     constructor() {
 
